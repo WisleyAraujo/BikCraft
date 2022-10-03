@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    list-style: none;
+  }
+  body {
+    padding-bottom: 600px;
+    color: #111111;
+  }
+  a {
+    color: inherit;
+  }
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  h1{
+    padding: 0; 
+  }
