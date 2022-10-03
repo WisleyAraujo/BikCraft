@@ -1,69 +1,68 @@
 .header-bg {
-    background: #000000;
-  }
-  
-  .header {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+  background: var(--cor-12);
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.header-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.header-menu a {
+  flex-wrap: wrap;
+  padding: 10px 15px;
+  font-size: 18px;
+  display: inline-block;
+  font-family: "Poppins";
+  font-weight: 400;
+}
+.header-menu a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0px;
+  background: var(--cor-0);
+  margin-top: 4px;
+  transition: 0.3s;
+}
+.header-menu a:hover::after {
+  width: 100%;
+}
+
+/* RESPONSIVO */
+@media (max-width: 800px) {
+  .header-menu a {
+    background: var(--cor-11);
+    padding: 12px 16px;
+    border-radius: 4px;
   }
   .header-menu {
-    display: flex;
-    flex-wrap: wrap;
     gap: 20px;
   }
+  .header-menu a:hover {
+    background: var(--cor-10);
+  }
+  .header a::after {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .header-menu {
+    gap: 12px;
+  }
   .header-menu a {
-    color: #ffffff;
-    flex-wrap: wrap;
-    padding: 10px 15px;
-    font-size: 18px;
-    display: inline-block;
-    font-family: 'Poppins';
-    font-weight: 400;
+    padding: 8px 12px;
+    font-size: 14px;
   }
-  .header-menu a::after {
-    content: "";
-    display: block;
-    height: 2px;
-    width: 0px;
-    background: #ffffff;
-    margin-top: 4px;
-    transition: 0.3s;
-  }
-  .header-menu a:hover::after {
-    width: 100%;
-  }
-  
-  /* RESPONSIVO */
-  @media (max-width: 800px) {
-    .header-menu a {
-      background: #111111;
-      padding: 12px 16px;
-      border-radius: 4px;
-    }
-    .header-menu {
-      gap: 20px;
-    }
-    .header-menu a:hover {
-      background: #2e2e2e;
-    }
-    .header a::after {
-      display: none;
-    }
-  }
-  @media (max-width: 600px) {
-    .header-menu {
-      gap: 12px;
-    }
-    .header-menu a {
-      padding: 8px 12px;
-      font-size: 14px;
-    }
-  } /* RESPONSIVO */
-  
-  /* HEADER */
+} /* RESPONSIVO */
+
+/* HEADER */
