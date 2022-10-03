@@ -1,14 +1,16 @@
 @import "./global/reset.css";
-@import "./utilidades/tipografia.css";
-@import "./utilidades/cor.css";
-@import "./global/header.css";
 
 
 /* HOME */
+@import "./home/header.css";
 @import "./home/introducao.css";
 
 /* UTILIDADES */
+@import "./utilidades/tipografia.css";
 @import "./utilidades/componentes.css";
+@import "./utilidades/cor.css";
 
+/* BICICLETAS */
+@import "./bicicletas/bicicletas-listas.css"
 
 
