@@ -48,4 +48,7 @@
   .bikes-itens {
     gap: 20px;
   }
+  .bikes-container h2 {
+    margin-left: 20px;
+  }
 }

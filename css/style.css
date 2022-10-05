@@ -4,6 +4,11 @@
 /* HOME */
 @import "./home/header.css";
 @import "./home/introducao.css";
+@import "./home/tecnologia.css";
+@import "./home/parceiros.css";
+@import "./home/depoimento.css";
+/* SEGUROS */
+@import "./seguros/seguros.css";
 
 /* UTILIDADES */
 @import "./utilidades/tipografia.css";
