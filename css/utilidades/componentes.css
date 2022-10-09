@@ -2,6 +2,10 @@
   max-width: 1200px;
   margin: 0 auto;
 }
+.icon{
+  width: 40px;
+  height: 40px;
+}
 .botao {
   padding: 16px 32px;
   background: linear-gradient(#ffbf00, #f2a50c);
@@ -11,6 +15,7 @@
   text-transform: uppercase;
   display: inline-block;
   font: 600 1.125rem/1.35 "Poppins", sans-serif;
+  max-width: max-content;
 }
 .botao.secundario{
   background: var(--cor-10);

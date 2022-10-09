@@ -52,3 +52,10 @@
 .seguros-item a{
     grid-column: 1/-1;
 }
+
+@media (width <= 800px){
+    .seguros{
+        padding: 20px;
+        grid-template-columns: 1fr;
+    }
+}
