@@ -8,8 +8,11 @@
 @import "./home/parceiros.css";
 @import "./home/depoimento.css";
 @import "./home/footer.css";
+
 /* SEGUROS */
 @import "./seguros/seguros.css";
+@import "./seguros/vantagens.css";
+@import "./seguros/perguntas.css";
 
 
 /* termos */
