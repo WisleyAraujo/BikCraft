@@ -5,9 +5,7 @@
 .vantagens{
     padding: 120px 0px;
 }
-.vantagens h2{
 
-}
 .vantagens h2{
     margin-bottom: 60px;
 }
@@ -30,7 +28,4 @@
         gap: 20px;
 
     }
-}
-.dl{
-    margin: initial;
 }
