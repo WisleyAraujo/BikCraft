@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="./css/style.css">
+    <script src="./Js/plugins/simple-anime.js"></script>
+    <script src="./Js/script.js" defer></script>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <link rel="preload" href="./css/style.min.css" as="style">
+    <link rel="icon" href="./img/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap"
@@ -23,7 +27,7 @@
     <header class="header-bg">
         <div class="header container">
             <a href="./">
-                <img src="./img/bikcraft.svg" alt="BikCraft">
+                <img width="136" height="32" src="./img/bikcraft.svg" alt="BikCraft">
             </a>
             <nav aria-label="primaria">
                 <ul class="header-menu font-1-m cor-0">
@@ -44,7 +48,7 @@
             </div>
         </div>
         <div class="seguros container">
-            <div class="seguros-item">
+            <div class="seguros-item fadeInLeft" data-anime="200">
                 <h3 class="font-1-xl cor-6">Prata</h3>
                 <span class="font-1-xl cor-0">R$1999 <span class="font-1-xs cor-6">mensal</span></span>
                 <ul class="font-2-m cor-0">
@@ -53,9 +57,9 @@
                     <li>Suporte de 08 às 18h</li>
                     <li>Cobertura estadual</li>
                 </ul>
-                <a href="./orçamento.html" class="botao secundario">Inscreva-se</a>
+                <a href="./orcamento.html?tipo=seguro&produto=prata" class="botao secundario">Inscreva-se</a>
             </div>
-            <div class="seguros-item">
+            <div class="seguros-item fadeInRight" data-anime="400">
                 <h3 class="font-1-xl cor-p1">Ouro</h3>
                 <span class="font-1-xl cor-0">R$ 2999 <span class="font-1-xs cor-6">mensal</span></span>
                 <ul class="font-2-m cor-0">
@@ -66,7 +70,7 @@
                     <li> Desconto e parceiros</li>
                     <li>Acesso ao clube bikcraft.svg</li>
                 </ul>
-                <a href="./orçamento.html" class="botao">Inscreva-se</a>
+                <a href="./orcamento.html?tipo=seguro&produto=ouro" class="botao">Inscreva-se</a>
             </div>
         </div>
     </main>
@@ -76,7 +80,7 @@
             <h2 class="font-1-xxl cor-0">vantagens <span class="cor-p1">.</span></h2>
             <ul>
                 <li>
-                    <img src="./img/icones/eletrica.svg" alt="">
+                    <img width="24" height="24" src="./img/icones/eletrica.svg" alt="">
                     <h3 class="font-1-l cor-0">Reparo Elétrico</h3>
                     <p class="font-2-s cor-5">
                         Garantimos o reparo completo do seu motor em caso de falhas. Sabemos que falhas sao raras, mas
@@ -84,7 +88,7 @@
                     </p>
                 </li>
                 <li>
-                    <img src="./img/icones/carbono.svg" alt="">
+                    <img width="24" height="24" src="./img/icones/carbono.svg" alt="">
                     <h3 class="font-1-l cor-0">Carbono</h3>
                     <p class="font-2-s cor-5">
                         Nossos quadros sao feitos para durar para sempre. Mas caso algo ocorra, ficamos felizes em
@@ -92,7 +96,7 @@
                     </p>
                 </li>
                 <li>
-                    <img src="./img/icones/sustentavel.svg" alt="">
+                    <img width="24" height="24" src="./img/icones/sustentavel.svg" alt="">
                     <h3 class="font-1-l cor-0">Sustentável</h3>
                     <p class="font-2-s cor-5">
                         Trabalhamos com a filosofia de desperdício zero. Qualquer parte defeituosa é reciclada e
@@ -100,7 +104,7 @@
                     </p>
                 </li>
                 <li>
-                    <img src="./img/icones/rastreador.svg" alt="">
+                    <img width="24" height="24" src="./img/icones/rastreador.svg" alt="">
                     <h3 class="font-1-l cor-0">rastreador</h3>
                     <p class="font-2-s cor-5">
                         Utilizamos o GPS da sua magrela em conjunto com especialistas em segurança para efetuarmos a
@@ -108,7 +112,7 @@
                     </p>
                 </li>
                 <li>
-                    <img src="./img/icones/seguro.svg" alt="">
+                    <img width="24" height="24" src="./img/icones/seguro.svg" alt="">
                     <h3 class="font-1-l cor-0">segurança</h3>
                     <p class="font-2-s cor-5">
                         Com o magrelas seguros, voce pode ficar tranquilo em saber que o seu dinheiro nao sera perdido
@@ -116,7 +120,7 @@
                     </p>
                 </li>
                 <li>
-                    <img src="./img/icones/velocidade.svg" alt="">
+                    <img width="24" height="24" src="./img/icones/velocidade.svg" alt="">
                     <h3 class="font-1-l cor-0">Rapidez</h3>
                     <p class="font-2-s cor-5">
                         A sua magrela ficara pronta para uso no mesmo dia, caso você traga ela par ser reparada em uma
@@ -133,35 +137,46 @@
         <h2 class="font-1-xxl">perguntas frequentes <span class="cor-p1">.</span></h2>
         <dl class="dl">
             <div>
-                <dt class="font-1-mb dl">Qual forma de pagamento voces aceitam?</dt>
-                <dd >Aceitamos pagamentos parcelados em todos os cartões de credito. Para pagamentos à
+                <dt><button class="font-1-mb dl" aria-controls="pergunta1" aria-expanded="true">Qual forma de pagamento
+                        voces aceitam?</button>
+                </dt>
+                <dd id="pergunta1" class="font-2-s cor-9 ativa">Aceitamos pagamentos parcelados em todos os cartões de
+                    credito. Para
+                    pagamentos à
                     vista
                     também aceitamos PIX e Boleto através do PagSeguro</dd>
             </div>
             <div>
-                <dt class="font-1-mb dl">Como posso entrar em contato?</dt>
-                <dd >Através do nosso WhatsApp, gmail e telegram.</dd>
+                <dt><button class="font-1-mb dl" aria-controls="pergunta2" aria-expanded="false">Como Posso entrar em
+                        contato?</button>
+                <dd id="pergunta2" class="font-2-s cor-9">Através do nosso WhatsApp, gmail e telegram.</dd>
             </div>
 
             <div>
-                <dt class="font-1-mb dl">Voces possuem algum desconto?</dt>
-                <dd >Sim, mas so para pagamentos á vista ou no boleto.</dd>
+                <dt><button class="font-1-mb dl" aria-controls="pergunta3" aria-expanded="false">Voces Possuem algum
+                        desconto?</button>
+                <dd id="pergunta3" class="font-2-s cor-9">Sim, mas so para pagamentos á vista ou no boleto.</dd>
             </div>
 
             <div>
-                <dt class="font-1-mb dl">Qual garantia que possuo?</dt>
-                <dd >A garantia de que nao ficaria sem sua magrela por mais de 24 horas, trabalhamos com
+                <dt><button class="font-1-mb dl" aria-controls="pergunta4" aria-expanded="false">Qual garantia que
+                        possuo?</button>
+                <dd id="pergunta4" class="font-2-s cor-9">A garantia de que nao ficaria sem sua magrela por mais de 24
+                    horas,
+                    trabalhamos com
                     excelência buscando sempre melhor atende-los.</dd>
             </div>
             <div>
-                <dt class="font-1-mb dl">Posso parcelar no boleto?</dt>
-                <dd >Sim você pode, mas lembre-se sempre de conferir as taxas de juros antes de realizar
-                    o
-                    pagamento.</dd>
+                <dt><button class="font-1-mb dl" aria-controls="pergunta5" aria-expanded="false">Posso parcelar no
+                        boleto?</button>
+                <dd id="pergunta5" class="font-2-s cor-9">Sim você pode, mas lembre-se sempre de conferir as taxas de
+                    juros antes de
+                    realizar o pagamento.</dd>
             </div>
             <div>
-                <dt class="font-1-mb dl">Quantas trocas posso fazer por ano?</dt>
-                <dd >Depende do seguro que você contratou <span class="cor-p1"><a
+                <dt><button class="font-1-mb dl" aria-controls="pergunta6" aria-expanded="false">Quantas trocas posso
+                        fazer por ano?</button>
+                <dd id="pergunta6" class="font-2-s cor-9"> Depende do seguro que você contratou <span class="cor-p1"><a
                             href="./termos.html">Saiba
                             Mais</a></span> .</dd>
             </div>
@@ -172,19 +187,19 @@
     <!-- FOOTER -->
     <footer class="footer-bg">
         <div class="footer container ">
-            <img src="./img/bikcraft.svg" alt="">
+            <img width="136" height="32" src="./img/bikcraft.svg" alt="">
             <div class="footer-contato">
                 <h3 class="font-2-l-b cor-0">Contatos</h3>
-                <ul class="font-2-m cor-5">
+                <ul class="font-1-m cor-5">
                     <li><a href="mailto:wisleyaraujosantos@gmail.com">
                             wisleyaraujo@gmail.com</a></li>
                     <li><a href=https://api.whatsapp.com/send?phone=5561996241946>
                             (61) 9 96241946</a></li>
                 </ul>
                 <div class="footer-redes">
-                    <a href=""><img src="./img/redes/facebook-p.svg" alt="Facebook"></a>
-                    <a href=""><img src="./img/redes/instagram-p.svg" alt="Instagram"></a>
-                    <a href=""><img src="./img/redes/youtube-p.svg" alt="Youtube"></a>
+                    <a href=""><img width="24" height="24" src="./img/redes/facebook-p.svg" alt="Facebook"></a>
+                    <a href=""><img width="24" height="24" src="./img/redes/instagram-p.svg" alt="Instagram"></a>
+                    <a href=""><img width="24" height="24" src="./img/redes/youtube-p.svg" alt="Youtube"></a>
                 </div>
             </div>
             <div class="footer-info">
@@ -198,7 +213,7 @@
                     </ul>
                 </nav>
             </div>
-            <p class="footer-copy font-2-m cor-6">Magrelas Bikes © alguns direitos reservados</p>
+            <p class="footer-copy font-1-m cor-6">BikCraft © alguns direitos reservados</p>
         </div>
     </footer>
     <!-- FOOTER -->

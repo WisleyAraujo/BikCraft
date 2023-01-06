@@ -2,8 +2,7 @@
     background: var(--cor-11);
 }
 .seguros{
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding: 60px 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;

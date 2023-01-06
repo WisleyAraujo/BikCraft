@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="./css/style.css">
+    <script src="./Js/plugins/simple-anime.js"></script>
+    <script src="./Js/script.js" defer></script>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <link rel="preload" href="./css/style.min.css" as="style">
+    <link rel="icon" href="./img/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap"
@@ -15,15 +19,16 @@
     <meta name="description"
         content="Bicicletas elétricas de alta precisão e qualidade feitas sob medidas para o cliente. Explore o mundo na sua velocidade com  a BikCraft">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magrelas Bike</title>
+    
+    <title>BikCraft</title>
 </head>
 
 <body>
     <!-- HEADER -->
-    <header class="header-bg">
+    <header class="header-bg" >
         <div class="header container">
             <a href="./">
-                <img src="./img/bikcraft.svg" alt="BikCraft">
+                <img src="./img/bikcraft.svg" width="136" height="32" alt="BikCraft">
             </a>
             <nav aria-label="primaria">
                 <ul class="header-menu font-1-m cor-0">
@@ -40,15 +45,18 @@
     <main class="introducao-bg">
         <div class="introducao container">
             <div class="introducao-conteudo">
-                <h1 class="font-1-xxl  cor-0">Bicicletas feitas sob medida <span class="cor-p1">.</span></h1>
-                <p class=" font-2-l cor-5">Bicicletas elétricas de alta precisão e qualidade, feitas sob medida para
+                <h1 data-anime="200" class="font-1-xxl  cor-0 fadeInDown" >Bicicletas feitas sob medida <span class="cor-p1">.</span></h1>
+                <p data-anime="400" class=" font-2-l cor-5 fadeInDown">Bicicletas elétricas de alta precisão e qualidade, feitas sob medida para
                     voce. Explore o mundo na
                     sua velocidade com a bikcraft.svg <span class="cor-p1">.</span></p>
-                <a class="botao" href="./bicicletas.html">Escolha a sua</a>
+                <a data-anime="600" class="botao" href="./bicicletas.html">Escolha a sua</a>
             </div>
-            <div class="introducao-img">
-                <img src="./img/fotos/introducao.jpg" alt="bicicleta elétrica">
-            </div>
+            <picture data-anime="800" class="fadeInDown">
+                <source media="(max-width:800px" ) srcset="./img/bicicletas/nimbus.jpg">
+                <img width="1280" height="1600" src="./img/fotos/introducao.jpg" alt="bicicleta elétrica">
+            </picture>
+
+
         </div>
     </main>
     <!-- INTRODUÇAO -->
@@ -58,22 +66,22 @@
         <h2 class="font-1-xxl container">escolha a sua magrela <span class="cor-p1">.</span></h2>
         <ul class="bikes-itens">
             <li>
-                <a href="./bicicletas/magic.html">
-                    <img src="./img/bicicletas/magic-home.jpg" alt="bicicleta preta">
+                <a href="./bikes/magic.html">
+                    <img width="920" height="1040" src="./img/bicicletas/magic-home.jpg" alt="bicicleta preta">
                     <h3 class="font-1-xl"> Magic Might</h3>
                     <span class="font-2-m cor-8">R$ 2999</span>
                 </a>
             </li>
             <li>
-                <a href="./bicicletas/magic.html">
-                    <img src="./img/bicicletas/nimbus-home.jpg" alt="bicicleta preta">
+                <a href="./bikes/nimbus.html">
+                    <img width="920" height="1040" src="./img/bicicletas/nimbus-home.jpg" alt="bicicleta preta">
                     <h3 class="font-1-xl">Nimbus Stark</h3>
                     <span class="font-2-m cor-8">R$ 4999</span>
                 </a>
             </li>
             <li>
-                <a href="./bicicletas/magic.html">
-                    <img src="./img/bicicletas/nebula-home.jpg" alt="bicicleta preta">
+                <a href="./bikes/nebula.html">
+                    <img width="920" height="1040" src="./img/bicicletas/nebula-home.jpg" alt="bicicleta preta">
                     <h3 class="font-1-xl">Nebula Cosmic</h3>
                     <span class="font-2-m cor-8">R$ 3999</span>
                 </a>
@@ -95,14 +103,14 @@
                 <a class="link" href="./bicicletas.hmtl">escolha um modelo</a>
                 <div class="tecnologia-vantagens">
                     <div>
-                        <img src="./img/icones/eletrica.svg" alt="">
+                        <img width="24" height="24" src="./img/icones/eletrica.svg" alt="">
                         <h3 class="font-1-m cor-0">Motor Elétrico</h3>
                         <p class="font-2-s cor-5">Toda bike é equipada com um motor Elétrico que possui duração de ate
                             120h.
                             A bateria é recarregada com sua energia gasta ao pedalar</p>
                     </div>
                     <div>
-                        <img src="./img/icones/rastreador.svg" alt="">
+                        <img width="24" height="24" src="./img/icones/rastreador.svg" alt="">
                         <h3 class="font-1-m cor-0">Rastreador</h3>
                         <p class="font-2-s cor-5">Sabemos o quão preciosa é a sua bike, por isso adicionamos
                             rastreadores e
@@ -111,7 +119,7 @@
                 </div>
             </div>
             <div class="tencnologia-img">
-                <img src="./img/fotos/tecnologia.jpg" alt="">
+                <img width="1200" height="1920" src="./img/fotos/tecnologia.jpg" alt="">
             </div>
         </div>
     </section>
@@ -121,14 +129,14 @@
     <section class="parceiros container" aria-label="parceiros">
         <h2 class="container font-1-xxl"> nossos parceiros <span class="cor-p1">.</span></h2>
         <ul>
-            <li><img src="./img/parceiros/caravan.svg" alt=""></li>
-            <li><img src="./img/parceiros/ranek.svg" alt=""></li>
-            <li><img src="./img/parceiros/handel.svg" alt=""></li>
-            <li><img src="./img/parceiros/dogs.svg" alt=""></li>
-            <li><img src="./img/parceiros/lescone.svg" alt=""></li>
-            <li><img src="./img/parceiros/flexblog.svg" alt=""></li>
-            <li><img src="./img/parceiros/wildbeast.svg" alt=""></li>
-            <li><img src="./img/parceiros/surfbot.svg" alt=""></li>
+            <li><img width="140" height="38" src="./img/parceiros/caravan.svg" alt=""></li>
+            <li><img width="149" height="36" src="./img/parceiros/ranek.svg" alt=""></li>
+            <li><img width="139" height="50" src="./img/parceiros/handel.svg" alt=""></li>
+            <li><img width="152" height="39" src="./img/parceiros/dogs.svg" alt=""></li>
+            <li><img width="208" height="41" src="./img/parceiros/lescone.svg" alt=""></li>
+            <li><img width="165" height="38" src="./img/parceiros/flexblog.svg" alt=""></li>
+            <li><img width="196" height="54" src="./img/parceiros/wildbeast.svg" alt=""></li>
+            <li><img width="200" height="49" src="./img/parceiros/surfbot.svg" alt=""></li>
         </ul>
     </section>
     <!-- PARCEIROS -->
@@ -136,7 +144,7 @@
     <!-- DEPOIMENTO -->
     <section class="depoimento">
         <div>
-            <img src="./img/fotos/depoimento.jpg" alt="pessoa pedalando">
+            <img width="1920" height="1080" src="./img/fotos/depoimento.jpg" alt="pessoa pedalando">
         </div>
         <div class="depoimento-conteudo">
             <blockquote class="font-1-xl cor-p5">
@@ -184,21 +192,21 @@
     <!-- SEGUROS -->
 
     <!-- FOOTER -->
-    <footer class="footer-bg">
+     <footer class="footer-bg">
         <div class="footer container ">
-            <img src="./img/bikcraft.svg" alt="">
+            <img width="136" height="32" src="./img/bikcraft.svg" alt="">
             <div class="footer-contato">
                 <h3 class="font-2-l-b cor-0">Contatos</h3>
-                <ul class="font-2-m cor-5">
+                <ul class="font-1-m cor-5">
                     <li><a href="mailto:wisleyaraujosantos@gmail.com">
                             wisleyaraujo@gmail.com</a></li>
                     <li><a href=https://api.whatsapp.com/send?phone=5561996241946>
                             (61) 9 96241946</a></li>
                 </ul>
                 <div class="footer-redes">
-                    <a href=""><img src="./img/redes/facebook-p.svg" alt="Facebook"></a>
-                    <a href=""><img src="./img/redes/instagram-p.svg" alt="Instagram"></a>
-                    <a href=""><img src="./img/redes/youtube-p.svg" alt="Youtube"></a>
+                    <a href=""><img width="24" height="24" src="./img/redes/facebook-p.svg" alt="Facebook"></a>
+                    <a href=""><img width="24" height="24" src="./img/redes/instagram-p.svg" alt="Instagram"></a>
+                    <a href=""><img width="24" height="24" src="./img/redes/youtube-p.svg" alt="Youtube"></a>
                 </div>
             </div>
             <div class="footer-info">
@@ -212,11 +220,11 @@
                     </ul>
                 </nav>
             </div>
-            <p class="footer-copy font-2-m cor-6">Magrelas Bikes © alguns direitos reservados</p>
+            <p class="footer-copy font-1-m cor-6">BikCraft © alguns direitos reservados</p>
         </div>
     </footer>
     <!-- FOOTER -->
-
+    
 </body>
 
 </html>

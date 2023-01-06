@@ -3,7 +3,8 @@
   padding-bottom: 120px;
 } */
 .parceiros h2 {
-  padding-bottom: 60px;
+  
+  padding: 60px 20px;
 }
 .parceiros ul {
   display: grid;
